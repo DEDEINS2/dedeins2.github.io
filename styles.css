@@ -78,7 +78,7 @@ section h2 {
 
 /* Seção Home */
 #home {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagem-de-fundo.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fotodede.jpeg') center/cover no-repeat;
     height: 100vh; /* Ocupa toda a tela */
     display: flex;
     justify-content: center;
@@ -323,7 +323,41 @@ footer p {
     margin: 0;
 }
 
-/* Responsividade */
+/* Responsividade para telas maiores que 1200px (extra grandes) */
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .projeto {
+        width: calc(25% - 40px); /* 4 itens por linha em telas grandes */
+    }
+
+    .projetos-grid {
+        justify-content: space-between;
+    }
+}
+
+/* Responsividade para telas médias (entre 768px e 1024px) */
+@media (max-width: 1024px) {
+    #home h2 {
+        font-size: 2.5rem;
+    }
+
+    .projeto {
+        width: calc(50% - 40px); /* 2 itens por linha em telas médias */
+    }
+
+    header nav ul li {
+        margin: 0 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Responsividade para telas pequenas (máximo de 768px) */
 @media (max-width: 768px) {
     #home button, .projeto a, #contato a {
         font-size: 1rem;
@@ -354,5 +388,78 @@ footer p {
 
     header h1 {
         font-size: 2rem;
+    }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #home h2 {
+        font-size: 2.2rem;
+    }
+
+    #home p {
+        font-size: 1.3rem;
+    }
+
+    #home button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+
+    .projeto {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #sobre-mim h2, #projetos h2, #contato h2 {
+        font-size: 2rem;
+    }
+
+    #sobre-mim p, #projetos p, #contato p {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 320px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    #home h2 {
+        font-size: 1.8rem;
+    }
+
+    #home p {
+        font-size: 1.2rem;
+    }
+
+    #home button {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+    }
+
+    .projeto {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #sobre-mim h2, #projetos h2, #contato h2 {
+        font-size: 1.8rem;
+    }
+
+    #sobre-mim p, #projetos p, #contato p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
     }
 }
