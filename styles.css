@@ -9,13 +9,13 @@
 body {
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(to bottom, #e0e0e0, #f0f4f8); /* Degradê cinza suave */
+    background: linear-gradient(to bottom, #e0e0e0, #f0f4f8); /* Degradê suave */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da janela */
+    min-height: 100vh; /* Garante altura mínima */
 }
 
-/* Estilo do Header */
+/* ===== HEADER ===== */
 header {
     background-color: #ff0000; /* Vermelho */
     color: #fff;
@@ -25,8 +25,8 @@ header {
 
 header h1 {
     text-align: center;
-    font-size: 2.5rem; /* Título maior e mais imponente */
-    letter-spacing: 1px; /* Espaçamento suave entre letras */
+    font-size: 2.5rem;
+    letter-spacing: 1px;
     margin-bottom: 10px;
     font-weight: 700;
 }
@@ -47,26 +47,26 @@ header nav ul li a {
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav ul li a:hover {
     color: #ffcccc; /* Vermelho claro */
-    transform: scale(1.1); /* Suave aumento no hover */
+    transform: scale(1.1);
 }
 
 header nav ul li a:active {
-    color: #8a0606; /* Vermelho escuro ao clicar */
+    color: #8a0606; /* Vermelho escuro */
 }
 
-/* Estilo das Seções principais */
+/* ===== SEÇÕES ===== */
 section {
     padding: 60px 0;
     text-align: center;
     background-color: #ffffff;
     margin-bottom: 40px;
     border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Destaque */
 }
 
 section h2 {
@@ -130,33 +130,9 @@ section h2 {
     background-color: #8a0000;
 }
 
-/* Animações */
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Seção Sobre Mim */
+/* ===== SEÇÃO SOBRE MIM ===== */
 #sobre-mim {
-    padding: 60px 0;
-    background-color: #ffffff; /* Cor de fundo suave */
+    background-color: #ffffff;
     text-align: center;
 }
 
@@ -276,26 +252,26 @@ section h2 {
     color: #cc0000;
 }
 
-/* Seção Cartinha */
+/* ===== SEÇÃO CARTINHA ===== */
 #cartinha {
-    background-color: #fff9e6; /* Fundo bege para simular papel */
+    background-color: #fff9e6; /* Fundo bege */
     border: 2px solid #d4a373; /* Borda marrom claro */
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
     margin: 40px auto;
     max-width: 800px;
     padding: 40px;
     font-family: 'Georgia', serif; /* Fonte clássica */
     line-height: 1.8;
-    color: #5a3e2b; /* Cor marrom escuro para o texto */
+    color: #5a3e2b; /* Marrom escuro */
     text-align: justify;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #cartinha h2 {
-    font-family: 'Cursive', 'Georgia', serif; /* Estilo de fonte cursiva */
+    font-family: 'Cursive', 'Georgia', serif;
     font-size: 2.5rem;
-    color: #ff0000; /* Mesma cor da borda */
+    color: #ff0000;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -305,17 +281,17 @@ section h2 {
 }
 
 #cartinha p:last-child {
-    text-align: right; /* Alinha o fechamento da carta à direita */
-    font-style: italic; /* Estilo itálico para assinatura */
+    text-align: right;
+    font-style: italic; /* Assinatura */
 }
 
-/* Estilo do footer */
+/* ===== FOOTER ===== */
 footer {
     background-color: #8a0000;
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    margin-top: auto; /* Empurra o footer para baixo */
+    margin-top: auto;
     font-size: 0.9rem;
 }
 
@@ -323,7 +299,30 @@ footer p {
     margin: 0;
 }
 
-/* Responsividade para telas maiores que 1200px (extra grandes) */
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1200px) {
     header h1 {
         font-size: 2.2rem;
@@ -338,8 +337,16 @@ footer p {
     }
 }
 
-/* Responsividade para telas médias (entre 768px e 1024px) */
 @media (max-width: 1024px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #cartinha {
+        padding: 30px;
+        max-width: 100%;
+    }
+
     #home h2 {
         font-size: 2.5rem;
     }
@@ -351,14 +358,18 @@ footer p {
     header nav ul li {
         margin: 0 15px;
     }
-
-    header h1 {
-        font-size: 2rem;
-    }
 }
 
 /* Responsividade para telas pequenas (máximo de 768px) */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #cartinha {
+        padding: 20px;
+    }
+
     #home button, .projeto a, #contato a {
         font-size: 1rem;
         padding: 10px 20px;
@@ -394,7 +405,11 @@ footer p {
 /* Responsividade para telas pequenas */
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    #cartinha {
+        padding: 15px;
     }
 
     #home h2 {
