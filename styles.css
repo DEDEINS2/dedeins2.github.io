@@ -244,7 +244,7 @@ header nav ul li a:active {
 /* ===== SEÇÃO SOBRE MIM ===== */
 #sobre-mim {
     background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-    padding: 100px 0;
+    padding: 120px 0 100px 0; /* Padding extra no topo para compensar o header */
     text-align: center;
     position: relative;
     z-index: 2;
@@ -317,6 +317,119 @@ header nav ul li a:active {
     font-weight: 700;
     font-size: 1.8rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+    max-width: 800px;
+    margin: 60px auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #1a237e, #1565c0, #42a5f5);
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(26, 35, 126, 0.3);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #ffeb3b, #ffc107);
+    border: 4px solid #1a237e;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.timeline-item .date {
+    flex: 0 0 150px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #1a237e;
+    background: linear-gradient(45deg, #fff9c4, #fff59d);
+    padding: 15px 10px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+    border: 2px solid rgba(26, 35, 126, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item .content {
+    flex: 1;
+    margin: 0 30px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(26, 35, 126, 0.1);
+    border: 2px solid rgba(255, 193, 7, 0.2);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+.timeline-item .content h3 {
+    color: #1a237e;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.timeline-item .content p {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.love-message {
+    max-width: 800px;
+    margin: 60px auto 0;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 249, 196, 0.9), rgba(255, 245, 157, 0.9));
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(26, 35, 126, 0.1);
+    border: 2px solid rgba(255, 193, 7, 0.3);
+}
+
+.love-message p {
+    font-size: 1.3rem;
+    color: #1a237e;
+    font-weight: 500;
+    line-height: 1.8;
+    margin: 0;
 }
 
 /* ===== SEÇÃO PROJETOS ===== */
@@ -777,7 +890,7 @@ footer .stars {
     
     #sobre-mim {
         min-height: calc(100vh - 100px);
-        padding: 60px 0;
+        padding: 120px 0 60px 0; /* Padding extra no topo para mobile */
     }
     
     #sobre-mim .container {
@@ -788,6 +901,64 @@ footer .stars {
     #sobre-mim p, #projetos p, #contato p { font-size: 1.2rem; }
     #sobre-mim p { padding: 20px; }
     #sobre-mim strong { font-size: 1.4rem; }
+    
+    /* Timeline responsiva */
+    .timeline {
+        margin: 30px auto;
+        padding: 0 10px;
+    }
+    
+    .timeline::before {
+        left: 20px;
+        transform: none;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        margin-left: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-item::before {
+        left: -30px;
+        top: 25px;
+        transform: none;
+    }
+    
+    .timeline-item .date {
+        flex: none;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        padding: 10px;
+    }
+    
+    .timeline-item .content {
+        flex: none;
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+    
+    .timeline-item .content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .timeline-item .content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .love-message {
+        margin: 30px auto 0;
+        padding: 20px;
+    }
+    
+    .love-message p {
+        font-size: 1.1rem;
+    }
     
     footer {
         padding: 30px 0;
@@ -847,7 +1018,7 @@ footer .stars {
     
     #sobre-mim {
         min-height: calc(100vh - 90px);
-        padding: 40px 0;
+        padding: 110px 0 40px 0; /* Padding extra no topo para celular */
     }
     
     #sobre-mim .container {
@@ -858,6 +1029,57 @@ footer .stars {
     #sobre-mim p, #projetos p, #contato p { font-size: 1.1rem; }
     #sobre-mim p { padding: 15px; }
     #sobre-mim strong { font-size: 1.3rem; }
+    
+    /* Timeline responsiva para celular */
+    .timeline {
+        margin: 20px auto;
+        padding: 0 5px;
+    }
+    
+    .timeline::before {
+        left: 12px;
+    }
+    
+    .timeline-item {
+        margin-left: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .timeline-item::before {
+        left: -20px;
+        top: 20px;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .timeline-item .date {
+        font-size: 0.9rem;
+        padding: 8px 6px;
+        margin-bottom: 8px;
+    }
+    
+    .timeline-item .content {
+        padding: 12px;
+    }
+    
+    .timeline-item .content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .timeline-item .content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .love-message {
+        margin: 25px auto 0;
+        padding: 15px;
+    }
+    
+    .love-message p {
+        font-size: 1rem;
+    }
     
     footer {
         padding: 25px 0;
@@ -917,7 +1139,7 @@ footer .stars {
     
     #sobre-mim {
         min-height: calc(100vh - 80px);
-        padding: 30px 0;
+        padding: 100px 0 30px 0; /* Padding extra no topo para telas muito pequenas */
     }
     
     #sobre-mim .container {
@@ -928,6 +1150,57 @@ footer .stars {
     #sobre-mim p, #projetos p, #contato p { font-size: 1rem; }
     #sobre-mim p { padding: 12px; }
     #sobre-mim strong { font-size: 1.2rem; }
+    
+    /* Timeline responsiva para telas muito pequenas */
+    .timeline {
+        margin: 15px auto;
+        padding: 0 3px;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-item {
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .timeline-item::before {
+        left: -18px;
+        top: 18px;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .timeline-item .date {
+        font-size: 0.85rem;
+        padding: 6px 4px;
+        margin-bottom: 6px;
+    }
+    
+    .timeline-item .content {
+        padding: 10px;
+    }
+    
+    .timeline-item .content h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .timeline-item .content p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .love-message {
+        margin: 20px auto 0;
+        padding: 12px;
+    }
+    
+    .love-message p {
+        font-size: 0.9rem;
+    }
     
     footer {
         padding: 20px 0;
